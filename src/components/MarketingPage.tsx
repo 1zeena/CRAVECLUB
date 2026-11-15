@@ -427,4 +427,26 @@ export function MarketingPage() {
             <p role="status">{notice.startsWith("Copy") ? notice : ""}</p>
           </>
         ) : (
-          <div cla
+          <div className="empty-bag">
+            <Star />
+            <h3>
+              SO MUCH ROOM
+              <br />
+              FOR GOOD THINGS.
+            </h3>
+            <p>Your box is waiting for its first snack.</p>
+            <button
+              className="pill dark"
+              onClick={() => {
+                dialog.current?.close();
+                document.getElementById("menu")?.scrollIntoView();
+              }}
+            >
+              EXPLORE THE MENU <Arrow />
+            </button>
+          </div>
+        )}
+      </dialog>
+    </>
+  );
+}
