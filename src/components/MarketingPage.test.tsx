@@ -18,7 +18,7 @@ it("fills the box, combines repeated snacks, and updates quantities and subtotal
   await user.click(add[0]);
   await user.click(add[2]);
   expect(within(box).getByText("3 snacks")).toBeTruthy();
-  expect(within(box).getByText("$14.50")).toBeTruthy();
+  expect(within(box).getByText("LE 14.50")).toBeTruthy();
   expect(within(box).getAllByText("Cookie Bites")).toHaveLength(1);
   expect(review.disabled).toBe(false);
   await user.click(
@@ -26,7 +26,7 @@ it("fills the box, combines repeated snacks, and updates quantities and subtotal
       name: "Remove one Cookie Bites with Chocolate sauce",
     }),
   );
-  expect(within(box).getByText("$10.00")).toBeTruthy();
+  expect(within(box).getByText("LE 10.00")).toBeTruthy();
   await user.click(
     within(box).getByRole("button", {
       name: "Remove one Cookie Bites with Chocolate sauce",
@@ -38,7 +38,7 @@ it("fills the box, combines repeated snacks, and updates quantities and subtotal
     }),
   );
   expect(within(box).getByText("0 snacks")).toBeTruthy();
-  expect(within(box).getByText("$0.00")).toBeTruthy();
+  expect(within(box).getByText("LE 0.00")).toBeTruthy();
   expect(review.disabled).toBe(true);
 });
 
@@ -56,7 +56,7 @@ it("keeps sauce variants separate and preserves existing choices when the picker
   expect(within(box).getByText("Caramel")).toBeTruthy();
   expect(within(box).getAllByText("Cookie Bites")).toHaveLength(2);
   expect(within(box).getByText("3 snacks")).toBeTruthy();
-  expect(within(box).getByText("$13.50")).toBeTruthy();
+  expect(within(box).getByText("LE 13.50")).toBeTruthy();
   await user.selectOptions(pickers[2], "Mayo");
   await user.click(add[2]);
   await user.selectOptions(pickers[3], "Cheese sauce");
@@ -69,5 +69,5 @@ it("keeps sauce variants separate and preserves existing choices when the picker
     }),
   );
   expect(within(box).getByText("4 snacks")).toBeTruthy();
-  expect(within(box).getByText("$18.50")).toBeTruthy();
+  expect(within(box).getByText("LE 18.50")).toBeTruthy();
 });

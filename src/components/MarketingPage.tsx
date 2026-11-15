@@ -13,44 +13,42 @@ const snacks: Snack[] = [
     id: "cookie",
     name: "Cookie Bites",
     description: "Mini chocolate chip cookies. Golden outside, soft inside.",
-    price: 4.5,
+    price: 140,
     color: "#dce9b0",
-    sauces: ["Chocolate sauce", "White chocolate", "Caramel", "No sauce"],
+    sauces: ["Milk chocolate", "White chocolate", "Caramel", "No sauce"],
   },
   {
     id: "brownie",
     name: "Brownie Bites",
     description:
       "Bite-sized chocolate brownies with crackly tops and fudgy centres.",
-    price: 5,
+    price: 150,
     color: "#dab6c5",
-    sauces: ["Chocolate sauce", "White chocolate", "Caramel", "No sauce"],
+    sauces: ["Milk chocolate", "White chocolate", "Caramel", "No sauce"],
   },
   {
     id: "fries",
     name: "Japanese Long Fries",
     description: "Extra-long Japanese-style potato fries with a golden crunch.",
-    price: 5.5,
+    price: 160,
     color: "#f3bc7a",
-    sauces: ["Hot sauce", "Mayo", "Cheese sauce", "Ketchup", "No sauce"],
+    sauces: ["Hot sauce", "Mayo", "Cheese ", "Ketchup", "No sauce"],
   },
   {
     id: "corn",
     name: "Butter Corn",
     description: "Sweet corn kernels tossed in melted butter.",
-    price: 4,
+    price: 110,
     color: "#e9d985",
-    sauces: ["Butter", "Spicy mayo", "Cheese sauce", "Hot sauce", "No sauce"],
+    sauces: ["Spicy mayo", "Cheese", "Hot sauce", "No sauce"],
   },
 ];
-const food = (id: string, width = 800) => {
+const food = (id: string, _width = 800) => {
   const image = ["cookie", "brownie"].includes(id) ? `${id}-chocolate-cup` : id;
-  return import.meta.env.DEV
-    ? `/img/${image}.png`
-    : `/.netlify/images?url=/img/${image}.png&w=${width}&fm=webp&q=85`;
+  return `/img/${image}.png`;
 };
-const money = (n: number) => `$${n.toFixed(2)}`;
-const saucePrice = (sauce: string) => (sauce === "No sauce" ? 0 : 0.5);
+const money = (n: number) => `LE ${n.toFixed(2)}`;
+const saucePrice = (sauce: string) => (sauce === "No sauce" ? 0 : 15);
 function Star({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -173,7 +171,7 @@ export function MarketingPage() {
           <div className="builder-heading">
             <div>
               <p className="hero-kicker">THE MENU</p>
-              <h2>FILL YOUR HAPPY BOX.</h2>
+              <h2>FILL YOUR BOX.</h2>
             </div>
           </div>
           <div className="builder-layout">
@@ -232,11 +230,6 @@ export function MarketingPage() {
                           );
                         })}
                       </fieldset>
-                      {["cookie", "brownie"].includes(item.id) && (
-                        <small className="sauce-caption">
-                          Chocolate sauce pictured.
-                        </small>
-                      )}
                       <button className="snack-add" onClick={() => add(item)}>
                         ADD TO BOX <span aria-hidden="true">+</span>
                       </button>
@@ -247,7 +240,7 @@ export function MarketingPage() {
             </div>
             <aside className="box-panel" aria-labelledby="box-heading">
               <div className="box-panel-heading">
-                <h3 id="box-heading">YOUR HAPPY BOX</h3>
+                <h3 id="box-heading">YOUR BOX</h3>
                 <span>
                   {count} {count === 1 ? "snack" : "snacks"}
                 </span>
@@ -315,16 +308,12 @@ export function MarketingPage() {
                 REVIEW YOUR BOX <Arrow />
               </button>
               <p className="preview-note">
-                Just a preview. Sample USD prices.
+                Just a preview. Sample EGP prices.
                 <br />
                 Online ordering opens soon. No payment is taken.
               </p>
             </aside>
           </div>
-          <p className="recipe-note">
-            Sauces are $0.50 each; no sauce is $0.00. Recipe and allergen
-            details will be confirmed before ordering opens.
-          </p>
         </section>
         <section className="simple-club" id="club">
           <Star />
@@ -356,7 +345,7 @@ export function MarketingPage() {
         }}
       >
         <div className="bag-head">
-          <h2 id="bag-title">YOUR HAPPY BOX.</h2>
+          <h2 id="bag-title">YOUR BOX.</h2>
           <button
             aria-label="Close box"
             onClick={() => dialog.current?.close()}
