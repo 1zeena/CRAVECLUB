@@ -150,7 +150,7 @@ export function MarketingPage() {
               Pick your favourites. Make a box that’s all you. */}
             </p>
             <a className="pill dark" href="#menu">
-              FILL YOUR BOX <Arrow />
+              FILL YOUR BOX  
             </a>
           </div>
           <div className="simple-hero-art">
@@ -305,7 +305,7 @@ export function MarketingPage() {
                 disabled={!count}
                 onClick={() => dialog.current?.showModal()}
               >
-                REVIEW YOUR BOX <Arrow />
+                REVIEW YOUR BOX  
               </button>
               <p className="preview-note">
                 Just a preview. Sample EGP prices.
@@ -325,7 +325,7 @@ export function MarketingPage() {
             </p>
           </div>
           <a href="#menu" className="pill dark">
-            PICK YOUR FAVOURITES <Arrow />
+            PICK YOUR FAVOURITES  
           </a>
         </section>
       </main>
@@ -411,7 +411,7 @@ export function MarketingPage() {
                 }
               }}
             >
-              {copied ? "CRAVINGS COPIED ✓" : "COPY YOUR SNACK LIST"} <Arrow />
+              {copied ? "CRAVINGS COPIED ✓" : "COPY YOUR SNACK LIST"}  
             </button>
             <p role="status">{notice.startsWith("Copy") ? notice : ""}</p>
           </>
@@ -431,7 +431,7 @@ export function MarketingPage() {
                 document.getElementById("menu")?.scrollIntoView();
               }}
             >
-              EXPLORE THE MENU <Arrow />
+              EXPLORE THE MENU  
             </button>
           </div>
         )}
