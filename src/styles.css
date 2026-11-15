@@ -291,12 +291,12 @@ button {
 }
 .hero-feast {
   width: 116%;
-  height: 108%;
-  top: -4%;
-  left: -8%;
-  animation:
+  height: 130%;
+  top: -21%;
+  left: -3%;
+  /* animation:
     feast-fall 1.2s cubic-bezier(0.16, 1, 0.3, 1) both,
-    feast-float 4.8s ease-in-out 1.2s infinite;
+    feast-float 4.8s ease-in-out 1.2s infinite; */
 }
 .hero-caption {
   position: absolute;
